@@ -1,5 +1,7 @@
 const Store = require('lib/index.js')
 let store = new Store()
+const Mixin = require('utils//index.js')
+Page = Mixin.Page
 //app.js
 App({
   onLaunch: function () {
