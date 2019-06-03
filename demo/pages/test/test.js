@@ -6,6 +6,7 @@ Page({
   }],
 
   data: {
+    name: 2
     // count: app.globalData.count
   }
 })
