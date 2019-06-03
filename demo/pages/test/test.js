@@ -6,6 +6,6 @@ Page({
   }],
 
   data: {
-    count: app.globalData.count
+    // count: app.globalData.count
   }
 })

@@ -1,7 +1,8 @@
 const Store = require('lib/index.js')
 let store = new Store()
-const Mixin = require('utils//index.js')
-Page = Mixin.Page
+const regeneratorRuntime = require("./lib/regenerator-runtime/runtime.js")
+const Modello = require('lib/wx-modello.js')
+Page = Modello.Page
 //app.js
 App({
   onLaunch: function () {

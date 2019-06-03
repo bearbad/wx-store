@@ -1,6 +1,13 @@
 {
   "name": "wx-store",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "dist/wx-modello.js",
+  "module": "dist/vue-modello.mjs",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c build/rollup.config.js"
+  },
+  "devDependencies": {
+    "rollup": "^1.13.1"
+  }
 }
