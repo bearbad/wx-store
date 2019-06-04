@@ -1,7 +1,10 @@
 import UTIL from './util.js'
+import Modello from './modello.js'
+
+let WxModello = new Modello()
 
 const $page = decorator(Page, function (opt) {
-  UTIL.mixin(opt, {data: {name: 1}})
+  UTIL.mixin(opt, {data: WxModello.getCurrState(opt.modello)})
 })
 
 function decorator (fn, decorators) {
@@ -15,5 +18,6 @@ function decorator (fn, decorators) {
 }
 
 module.exports = {
+  WxModello: WxModello,
   Page: $page
 }

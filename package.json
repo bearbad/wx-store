@@ -5,7 +5,7 @@
   "module": "dist/vue-modello.mjs",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c build/rollup.config.js"
+    "build": "rollup -c build/rollup.config.js && cp dist/wx-modello.js demo/lib/wx-modello.js"
   },
   "devDependencies": {
     "rollup": "^1.13.1"

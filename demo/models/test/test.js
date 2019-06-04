@@ -3,7 +3,7 @@ module.exports = {
 
   state () {
     return {
-      number: ''
+      number: '1'
     }
   },
 

@@ -6,11 +6,11 @@ class Model {
   }
 
   get modelName () {
-    return this._.option.modelName
+    return this._.opt.modelName
   }
 
   getDefaultState () {
-    let _state = this._.option.state
+    let _state = this._.opt.state
     return _state ? _state() : undefined
   }
 
@@ -19,14 +19,14 @@ class Model {
       return this.getDefaultState()
     }
 
-    let mixins = this._.option.mixins
+    let mixins = this._.opt.mixins
     let modState = mixins[mod].state
     return modState ? modState() : undefined
   }
 
   state () {
     let result = this.getDefaultState()
-    let mixins = this._.option.mixins
+    let mixins = this._.opt.mixins
 
     for(let mod in mixins) {
       let modState = this.getModState(mod)
@@ -61,6 +61,6 @@ class Model {
       return result
     }, undefined)
   }
-  
+
 }
 export default Model

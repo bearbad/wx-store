@@ -1,6 +1,7 @@
 const Store = require('lib/index.js')
 let store = new Store()
 const regeneratorRuntime = require("./lib/regenerator-runtime/runtime.js")
+require('./modello.js')
 const Modello = require('lib/wx-modello.js')
 Page = Modello.Page
 //app.js
