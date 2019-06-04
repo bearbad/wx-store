@@ -4,7 +4,15 @@ import Modello from './modello.js'
 let WxModello = new Modello()
 
 const $page = decorator(Page, function (opt) {
-  UTIL.mixin(opt, {data: WxModello.getCurrState(opt.modello)})
+  UTIL.mixin(opt.data, WxModello.getCurrState(opt.modello))
+  const onLoad = opt.onLoad || function () { }
+  opt.onLoad = function () {
+    opt.setData = function (params) {
+      this.setData(params)
+    }.bind(this)
+    onLoad.call(this)
+  }
+  WxModello.getMethods(opt)
 })
 
 function decorator (fn, decorators) {

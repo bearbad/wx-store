@@ -7,7 +7,26 @@ module.exports = {
     }
   },
 
-  actions: {},
+  actions: {
+    createTest ({ dispatch, commit }) {
+      commit('createTestInMutations')
+      return dispatch('create')
+    },
 
-  mutations: {}
+    create ({ dispatch, commit, state }) {
+      console.log(state)
+      console.log('执行create')
+    }
+  },
+
+  mutations: {
+    createTestInMutations (state, setData) {
+      // console.log(state)
+      setData({
+        Test: {
+          number: 3
+        }
+      })
+    }
+  }
 }
