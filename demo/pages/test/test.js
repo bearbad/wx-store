@@ -10,6 +10,10 @@ Page({
     // count: app.globalData.count
   },
 
+  onLoad: function (option) {
+    console.log('load', option)
+  },
+  
   testEvent () {
     this.$model.Test.createTest({test: 'test'})
   }

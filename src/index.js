@@ -5,23 +5,20 @@ let WxModello = new Modello()
 
 const $page = decorator(Page, function (opt) {
   UTIL.mixin(opt.data, WxModello.getCurrState(opt.modello))
-  const onLoad = opt.onLoad || function () { }
-  opt.onLoad = function () {
+  const onLoad = opt.onLoad || function () {}
+  opt.onLoad = function (option) {
     opt.setData = function (params) {
       this.setData(params)
     }.bind(this)
-    onLoad.call(this)
+    onLoad.call(this, option)
   }
   WxModello.getMethods(opt)
 })
 
 function decorator (fn, decorators) {
   return function () {
-    // arguments  小程序Page参数
-    // 合并参数
     decorators && decorators.apply(this, arguments)
-    // UTIL.mixin(arguments, {name: 1})
-    return fn.apply(this, arguments)
+    return fn && fn.apply(this, arguments)
   }
 }
 
