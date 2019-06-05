@@ -11,7 +11,7 @@ const $page = decorator(Page, function (opt) {
       this.setData(params)
       UTIL.mergeObj(opt.data, params)
     }.bind(this)
-    onLoad.call(this, option)
+    onLoad.apply(this, arguments)
   }
   WxModello.getMethods(opt)
 })

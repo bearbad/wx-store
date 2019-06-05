@@ -13,8 +13,13 @@ Page({
   onLoad: function (option) {
     console.log('load', option)
   },
-  
+
   testEvent () {
     this.$model.Test.createTest({test: 'test'})
+    this.setData({
+      Test: {
+        number: 4
+      }
+    })
   }
 })
