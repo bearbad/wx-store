@@ -9,6 +9,7 @@ const $page = decorator(Page, function (opt) {
   opt.onLoad = function (option) {
     opt.setData = function (params) {
       this.setData(params)
+      UTIL.mergeObj(opt.data, params)
     }.bind(this)
     onLoad.call(this, option)
   }

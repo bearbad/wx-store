@@ -21,7 +21,6 @@ module.exports = {
 
   mutations: {
     createTestInMutations (state, setData) {
-      // console.log(state)
       setData({
         Test: {
           number: 3
