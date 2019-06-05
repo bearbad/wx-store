@@ -48,6 +48,13 @@ class Modello {
     return this._.store[model]
   }
 
+  // plugin: mix
+  // this: modello
+  // args: params
+  use (plugin, ...args) {
+    plugin.install(this, ...args)
+  }
+
   on (...args) {
     return this.Model.on(...args)
   }
