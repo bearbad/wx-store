@@ -30,6 +30,15 @@ class Model {
       }
     })
 
+    // mixed api-client
+    Model.fire('mixed', function (handler) {
+      handler(_.option)
+
+      for(let mod in mixins) {
+        handler(mixins[mod])
+      }
+    }, this)
+
     // build action-->mod map
     for(let mod in actions) {
       Object.keys(actions[mod]).forEach((action) => {
