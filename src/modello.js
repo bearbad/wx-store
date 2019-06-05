@@ -48,6 +48,10 @@ class Modello {
     return this._.store[model]
   }
 
+  on (...args) {
+    return this.Model.on(...args)
+  }
+
   getMethods (opt) {
     let modello = opt.modello
     if (!modello) return

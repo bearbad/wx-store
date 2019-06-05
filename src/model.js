@@ -131,4 +131,18 @@ class Model {
     }
   }
 }
+
+let eventMap = {}
+
+Model.on = function (event, handler) {
+  eventMap[event] = eventMap[event] || []
+  eventMap[event].push(handler)
+}
+
+Model.fire = function (event, ...args) {
+  let observers = eventMap[event]
+  if (observers) {
+    observers.forEach(o => o(...args))
+  }
+}
 export default Model
