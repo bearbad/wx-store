@@ -32,7 +32,7 @@ class Model {
 
     // mixed api-client
     Model.fire('mixed', function (handler) {
-      handler(_.option)
+      handler(_.opt)
 
       for(let mod in mixins) {
         handler(mixins[mod])
