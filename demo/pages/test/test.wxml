@@ -1,4 +1,5 @@
 <view class="section">
   {{name}}-{{Test.number}}
+  {{ Test.query.age }}
   <button bindtap="testEvent">点击测试</button>
 </view>

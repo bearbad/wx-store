@@ -3,7 +3,16 @@ module.exports = {
 
   state () {
     return {
-      number: '1'
+      number: '1',
+      query: {}
+    }
+  },
+
+  wxApi: {
+    getTest: {
+      parameters: {
+        valuePath: 'query'
+      }
     }
   },
 
