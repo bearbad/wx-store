@@ -15,12 +15,11 @@ Page({
   },
 
   testEvent () {
-    this.$model.getTest()
-    // this.$model.Test.createTest({test: 'test'})
-    // this.setData({
-    //   Test: {
-    //     number: 4
-    //   }
-    // })
+    this.$model.updateTestName()
+      .then(res => {
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+      })
   }
 })
