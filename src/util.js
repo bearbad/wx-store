@@ -11,6 +11,19 @@ function mixin(o, ...params) {
   return o
 }
 
+function mergeObj(o, ...params) {
+  params.forEach(item => {
+    for (const key in item) {
+      if (isObject(o[key]) && isObject(item[key])) {
+        mergeObj(o[key], item[key])
+      } else {
+        o[key] = item[key] || o[key]
+      }
+    }
+  })
+  return o
+}
+
 function isObject(o) {
   return Object.prototype.toString.call(o) === "[object Object]"
 }
@@ -81,22 +94,10 @@ function setObjByPath (obj, path, val, createPath) {
   }
 }
 
-function mergeObj(o, ...params) {
-  params.forEach(item => {
-    for (const key in item) {
-      if (isObject(o[key]) && isObject(item[key])) {
-        mergeObj(o[key], item[key])
-      } else {
-        o[key] = item[key] || o[key]
-      }
-    }
-  })
-  return o
-}
 export default {
-  mixin: mixin,
-  makeActionContext: makeActionContext,
-  getObjByPath: getObjByPath,
-  setObjByPath: setObjByPath,
-  mergeObj: mergeObj
+  mixin,
+  makeActionContext,
+  getObjByPath,
+  setObjByPath,
+  mergeObj
 }

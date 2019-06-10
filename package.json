@@ -5,9 +5,16 @@
   "module": "dist/vue-modello.mjs",
   "license": "MIT",
   "scripts": {
+    "test": "jest",
     "build": "rollup -c build/rollup.config.js && cp dist/wx-modello.js demo/lib/wx-modello.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "regenerator-runtime": "^0.13.2",
     "rollup": "^1.13.1"
   }
 }
