@@ -41,6 +41,24 @@ Page({
       })
   },
 
+  formEvent2 (e) {
+    this.$model.updateTestName()
+      .then(res => {
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+      })
+  },
+
+  formEvent3 (e) {
+    this.$model.updateTestName(this.data)
+      .then(res => {
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+      })
+  },
+
   testEvent () {
     this.$model.updateTestName()
       .then(res => {

@@ -1,8 +1,16 @@
 <view class="section">
+  <view class="section_title">
+    表单
+  </view>
   <input placeholder="请输入名字" bindinput="inputEvent" value="{{Test.query.name}}" data-model="Test.query.name"/>
   <input placeholder="请输入年龄" bindinput="inputEvent" value="{{Test.query.age}}" data-model="Test.query.age"/>
   <input placeholder="请输入测试" bindinput="inputEvent" value="{{Test.number}}" data-model="Test.number"/>
   <input placeholder="请输入名称" bindinput="inputEvent" value="{{name}}" data-model="name"/>
-  <button bind:tap="formEvent">提交(调用wxAPi页面上传递参数)</button>
-  <button bind:tap="formEvent1">提交(调用wxAPi页面不传递参数)</button>
+  <view class="section_title">
+    操作
+  </view>
+  <button bind:tap="formEvent" size="mini" type="primary">wxApi(调用页面上传递参数)</button>
+  <button bind:tap="formEvent1" size="mini" type="primary">wxApi(调用页面不传递参数)</button>
+  <button bind:tap="formEvent2" size="mini" type="primary">Action(调用页面不传递参数,不调用mutation)</button>
+  <button bind:tap="formEvent3" size="mini" type="primary">Action(调用页面上传递参数,不调用mutation)</button>
 </view>
