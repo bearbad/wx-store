@@ -10,7 +10,7 @@ function makeActionDispatcher(opt, model, state, statePath) {
       mutations,
       UTIL.getObjByPath(opt.data, statePath),
       dispatch,
-      opt.setData
+      opt.$setData
     )
 
     let args = Array.from(arguments)

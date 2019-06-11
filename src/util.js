@@ -1,4 +1,4 @@
-function mixin(o, ...params) {
+export function mixin(o, ...params) {
   params.forEach(item => {
     for (const key in item) {
       if (isObject(o[key]) && isObject(item[key])) {
@@ -11,7 +11,7 @@ function mixin(o, ...params) {
   return o
 }
 
-function mergeObj(o, ...params) {
+export function mergeObj(o, ...params) {
   params.forEach(item => {
     for (const key in item) {
       if (isObject(o[key]) && isObject(item[key])) {
@@ -95,9 +95,7 @@ function setObjByPath (obj, path, val, createPath) {
 }
 
 export default {
-  mixin,
   makeActionContext,
   getObjByPath,
-  setObjByPath,
-  mergeObj
+  setObjByPath
 }

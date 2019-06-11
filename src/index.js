@@ -1,21 +1,20 @@
-import util from './util.js'
-import Modello from './modello.js'
+import {mixin, mergeObj} from './util.js'
+import M from './modello.js'
 
-let WxModello = new Modello()
+let WXM = new M()
 
 const $page = decorator(Page, function (opt) {
   let { modello, data } = opt
-  let currState = WxModello.getCurrState(modello)
-  util.mixin(data, currState)
+  mixin(data, WXM.getCurrState(modello))
   let onLoad = opt.onLoad || function () {}
   opt.onLoad = function (option) {
-    opt.setData = function (params) {
+    this.$setData = opt.$setData = function (params) {
       this.setData(params)
-      util.mergeObj(data, params)
+      mergeObj(opt.data, params)
     }.bind(this)
     onLoad.apply(this, arguments)
   }
-  WxModello.getMethods(opt)
+  WXM.getMethods(opt)
 })
 
 function decorator (fn, decorators) {
@@ -26,6 +25,6 @@ function decorator (fn, decorators) {
 }
 
 module.exports = {
-  WxModello: WxModello,
+  WxModello: WXM,
   Page: $page
 }

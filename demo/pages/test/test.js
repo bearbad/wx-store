@@ -7,11 +7,26 @@ Page({
 
   data: {
     name: 2
-    // count: app.globalData.count
   },
 
   onLoad: function (option) {
     console.log('load', option)
+  },
+
+  inputEvent (e) {
+    this.data.Test.query.name = e.detail.value
+    this. $setData({
+      Test: this.data.Test
+    })
+  },
+
+  formEvent (e) {
+    this.$model.updateTestName()
+      .then(res => {
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+      })
   },
 
   testEvent () {

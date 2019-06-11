@@ -1,5 +1,7 @@
 <view class="section">
-  {{name}}-{{Test.number}}
+  <input placeholder="请输入名字" bindinput="inputEvent" value="{{Test.query.name}}"/>
+  <button bind:tap="formEvent">提交</button>
+  <!-- {{name}}-{{Test.number}}
   {{ Test.query.age }}
-  <button bindtap="testEvent">点击测试</button>
+  <button bindtap="testEvent">点击测试</button> -->
 </view>

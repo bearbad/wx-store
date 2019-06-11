@@ -29,7 +29,7 @@ module.exports = {
 
     updateTestName ({dispatch, commit, state}) {
       console.log('updateTestName', state)
-      commit('updateTestName')
+      // commit('updateTestName')
       return dispatch('getTest')
     }
   },
