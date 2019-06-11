@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "debugger": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --no-cache --no-watchman",
     "build": "rollup -c build/rollup.config.js && cp dist/wx-modello.js demo/lib/wx-modello.js"
   },
   "devDependencies": {

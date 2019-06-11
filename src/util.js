@@ -14,7 +14,10 @@ export function mixin(o, ...params) {
 export function mergeObj(o, ...params) {
   params.forEach(item => {
     for (const key in item) {
-      if (isObject(o[key]) && isObject(item[key])) {
+      if (typeof key === 'string' && key.indexOf('.') > -1) {
+        let names = key.split('.')
+        mergeObj(o, arrToObj(names, item[key]))
+      } else if (isObject(o[key]) && isObject(item[key])) {
         mergeObj(o[key], item[key])
       } else {
         o[key] = item[key] || o[key]
@@ -22,6 +25,17 @@ export function mergeObj(o, ...params) {
     }
   })
   return o
+}
+
+export function arrToObj (arr, val, result) {
+  var ret = {}
+  var last = arr.pop()
+  ret[last] = result || val
+  if (arr.length === 0) {
+    return ret
+  } else {
+    return arrToObj(arr, val, ret)
+  }
 }
 
 function isObject(o) {

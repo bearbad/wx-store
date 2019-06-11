@@ -13,15 +13,27 @@ Page({
     console.log('load', option)
   },
 
+  // listen input
   inputEvent (e) {
-    this.data.Test.query.name = e.detail.value
-    this. $setData({
-      Test: this.data.Test
+    let item = e.currentTarget.dataset.model
+    this.$setData({
+      [item]: e.detail.value
     })
   },
 
+  // page send params
   formEvent (e) {
-    this.$model.updateTestName()
+    this.$model.getTest(this.data)
+      .then(res => {
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+      })
+  },
+
+  // page send without params
+  formEvent1 (e) {
+    this.$model.getTest()
       .then(res => {
         console.log(res)
       }).catch(error => {

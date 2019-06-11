@@ -1,7 +1,8 @@
 <view class="section">
-  <input placeholder="请输入名字" bindinput="inputEvent" value="{{Test.query.name}}"/>
-  <button bind:tap="formEvent">提交</button>
-  <!-- {{name}}-{{Test.number}}
-  {{ Test.query.age }}
-  <button bindtap="testEvent">点击测试</button> -->
+  <input placeholder="请输入名字" bindinput="inputEvent" value="{{Test.query.name}}" data-model="Test.query.name"/>
+  <input placeholder="请输入年龄" bindinput="inputEvent" value="{{Test.query.age}}" data-model="Test.query.age"/>
+  <input placeholder="请输入测试" bindinput="inputEvent" value="{{Test.number}}" data-model="Test.number"/>
+  <input placeholder="请输入名称" bindinput="inputEvent" value="{{name}}" data-model="name"/>
+  <button bind:tap="formEvent">提交(调用wxAPi页面上传递参数)</button>
+  <button bind:tap="formEvent1">提交(调用wxAPi页面不传递参数)</button>
 </view>
