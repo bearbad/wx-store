@@ -13,4 +13,8 @@
   <button bind:tap="formEvent1" size="mini" type="primary">wxApi(调用页面不传递参数)</button>
   <button bind:tap="formEvent2" size="mini" type="primary">Action(调用页面不传递参数,不调用mutation)</button>
   <button bind:tap="formEvent3" size="mini" type="primary">Action(调用页面上传递参数,不调用mutation)</button>
+  <view class="section_title">
+    生命周期
+  </view>
+  <button bind:tap="to" size="mini" type="primary">跳转</button>
 </view>

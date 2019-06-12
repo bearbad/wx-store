@@ -10,7 +10,29 @@ Page({
   },
 
   onLoad: function (option) {
-    console.log('load', option)
+    console.log('onLoad', option)
+  },
+
+  onReady () {
+    console.log('onReady')
+  },
+
+  onShow: function () {
+    console.log('onShow')
+  },
+
+  onHide () {
+    console.log('onHide')
+  },
+
+  onUnload () {
+    console.log('onUnload')
+  },
+
+  to () {
+    wx.navigateTo({
+      url: '/pages/home/home'
+    })
   },
 
   // listen input
