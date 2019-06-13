@@ -6,18 +6,14 @@ let WXM = new M()
 const _page = decorator(Page, function (options) {
   let { modello, data } = options
   mixin(data, WXM.getCurrState(modello))
-  console.log('env', process.env.NODE_ENV)
-  // override onLoad for override setData
   const _onLoad = options.onLoad
   options.onLoad = function (option) {
     this.$setData = options.$setData = function (params) {
       this.setData(params)
-      // data consistency
-      mergeObj(data, params)
+      mergeObj(options.data, params)
     }.bind(this)
-    _onLoad.call(this, option)
+    _onLoad.apply(this, arguments)
   }
-
   WXM.getMethods(options)
 })
 

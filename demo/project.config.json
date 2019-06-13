@@ -56,7 +56,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "测试",
 					"pathName": "pages/test/test",
 					"query": "name=1&age=2",

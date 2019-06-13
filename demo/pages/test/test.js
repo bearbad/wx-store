@@ -10,6 +10,8 @@ Page({
   },
 
   onLoad: function (option) {
+    console.log('全局数据状态', app.globalData)
+    app.globalData.count = 2
     console.log('onLoad', option)
   },
 

@@ -16,6 +16,7 @@
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.2",
-    "rollup": "^1.13.1"
+    "rollup": "^1.13.1",
+    "rollup-plugin-replace": "^2.2.0"
   }
 }
