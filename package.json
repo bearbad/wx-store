@@ -2,7 +2,7 @@
   "name": "wx-store",
   "version": "1.0.0",
   "main": "dist/wx-modello.js",
-  "module": "dist/vue-modello.mjs",
+  "module": "dist/wx-modello.mjs",
   "license": "MIT",
   "scripts": {
     "test": "jest",
