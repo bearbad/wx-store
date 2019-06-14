@@ -9,7 +9,7 @@ export default {
   plugins: [
     replace({
       exclude: 'node_modules/**',
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
     babel({
       exclude: 'node_modules/**'
