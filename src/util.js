@@ -1,3 +1,10 @@
+function test () {
+  let arr = [1, 2, 3]
+  let _arr = arr.map((n) => n + 1)
+  let ret = _arr.includes(4)
+  return ret
+}
+
 export function mixin(o, ...params) {
   params.forEach(item => {
     for (const key in item) {
@@ -109,6 +116,7 @@ function setObjByPath (obj, path, val, createPath) {
 }
 
 export default {
+  test,
   makeActionContext,
   getObjByPath,
   setObjByPath

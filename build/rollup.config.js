@@ -1,4 +1,4 @@
-// import babel from 'rollup-plugin-babel'
+import babel from 'rollup-plugin-babel'
 // import babelrc from 'babelrc-rollup'
 const replace = require('rollup-plugin-replace')
 
@@ -10,6 +10,9 @@ export default {
     replace({
       exclude: 'node_modules/**',
       'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+    babel({
+      exclude: 'node_modules/**'
     })
     // babel(babelrc())
   ],
